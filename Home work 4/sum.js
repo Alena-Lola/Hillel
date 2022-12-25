@@ -1,8 +1,8 @@
-let sum=1;
+let num=1;
 console.group();
 for(let i=15;i<=35;i++){
-    sum=sum*i;
+    num=num*i;
 
 }
-console.log(sum);
+console.log(num);
 console.groupEnd();
