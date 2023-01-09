@@ -1,24 +1,21 @@
 function findLongest(sentence) {
+    if (typeof sentence !== 'string') {
+        return '';
+    }
+
     let arrSentence = sentence.split(' ');
-    let longest;
-    let wordLength = 0;
-
+    let longest='';
+    
     for (let i = 0; i < arrSentence.length; i++) {
-        wordLength = arrSentence[1].length;
+        let wordLength = arrSentence[i].length;
 
-        if (arrSentence[i].length > wordLength) {
-            longest = arrSentence[i];
-
-            return longest;
+         if (longest.length < wordLength) {
+            longest = arrSentence[i];   
         }
     }
 
-    if (typeof sentence !== 'string') {
-        return ' ';
-    }
+    return longest;
 
 }
 
-
 console.log(findLongest('london is the capital of great britain its political economic and cultural centre political'))
-
