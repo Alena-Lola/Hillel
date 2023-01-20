@@ -5,3 +5,9 @@ for (let i = 1; i <= 10; i++) {
     }
     document.write("</tr>");
 }
+
+function newInput(){
+    let input = document.getElementById('login')
+    input.value
+    // console.log(input.value)
+}
