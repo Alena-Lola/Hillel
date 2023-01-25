@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <title>hw23</title>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form name='registration'>
+<fieldset>
+    <label for="userFirstName">First name:</label>
+    <input type="text" id="userFirstName" name="userFirstName" size="50"><br><br>
+    <label for="userLastName">Last name:</label>
+    <input type="text" id="userLastName" name="userLastName" size="50"><br><br>
+
+    <label for="data">Date of birth:</label>
+    <input type="text" id="data" name="data" size="50"><br><br>
+
+    <label>Sex:</label>
+    <input type="radio" id="msex" name="msex" value="Male">
+    <label for="msex">Male</label>
+    <input type="radio" id="fsex" name="fsex" value="Female">
+    <label for="fsex">Female</label><br><br>
+
+    <label for="city">City:</label>
+    <select name="city" id="city">
+        <option value="dnipro">Dnipro</option>
+        <option value="lviv">Lviv</option>
+        <option value="kharkiv">Kharkiv</option>
+        <option value="odessa">Odessa</option>
+        <option value="kyiv">Kyiv</option>
+    </select><br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" size="50"><br><br>
+
+    <label>Language:</label>
+    <input type="checkbox" id="languageEn" name="en" value="English">
+    <label for="languageEn">English</label>
+    <input type="checkbox" id="languageNo" name="nonen" value="Non English">
+    <label for="languageNo">Non English</label><br><br>
+
+    <button type="button" onclick="saveData()">Save</button>
+
+</fieldset>
+</form>
+
+
+<table id="myTable">
+    <tr>
+        <td>First name:</td>
+        <td>Last name:</td>
+        <td>Date of birth:</td>
+        <td>Sex:</td>
+        <td>City:</td>
+        <td>Address:</td>
+        <td>Language:</td>
+    </tr>
+</table>
+
+<script src="forma.js"></script>
+</body>
+</html>
