@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+
+    <title>hw24</title>
+</head>
+<body>
+<ul class="box">
+
+    <div class="container">
+        <li class="block">
+            <div class="clothes">Clothes:</div>
+        </li>
+        <li class="menu" id="menuWomen" >
+            <a href="javascript:void(0)"  >
+            <div onclick="menuWomen()">Women</div>
+            </a>
+        </li>
+        <li class="menu" id="menuMen">
+            <a href="javascript:void(0)" >
+                <div onclick="menuMen()">Men</div>
+            </a>
+        </li>
+    </div>
+
+
+    <ul class="box" id="boxWomen" style="visibility:hidden">
+    <div class="container">
+        <li class="block">
+            <div class="clothes">Women clothes:</div>
+        </li>
+
+        <li class="menu" id="women">
+            <a href="javascript:void(0)" >
+                <div onclick="women()">Dress</div>
+            </a>
+        </li>
+        <li class="menu">
+            <a href="javascript:void(0)">
+                <div onclick="women()">T-shirt</div>
+            </a>
+        </li>
+        <li class="menu">
+            <a href="javascript:void(0)">
+                <div onclick="women()">Skirt</div>
+            </a>
+        </li>
+        <li class="menu">
+            <a href="javascript:void(0)">
+                <div onclick="women()">Pans</div>
+            </a>
+        </li>
+    </div>
+</ul>
+
+    <ul class="box"  id="boxMen" style="visibility:hidden">
+        <div class="container">
+            <li class="block">
+                <div class="clothes">Men clothes:</div>
+            </li>
+
+            <li class="menu">
+                <a href="javascript:void(0)">
+                    <div onclick="men()">Costume</div>
+                </a>
+            </li>
+            <li class="menu">
+                <a href="javascript:void(0)">
+                    <div onclick="men()">T-shirt</div>
+                </a>
+            </li>
+            <li class="menu">
+                <a href="javascript:void(0)">
+                    <div onclick="men()">Shorts</div>
+                </a>
+            </li>
+            <li class="menu">
+                <a href="javascript:void(0)">
+                    <div onclick="men()">Pans</div>
+                </a>
+            </li>
+        </div>
+    </ul>
+
+    <ul class="box" id="moreInfo" style="visibility:hidden" >
+        <div class="container">
+            <li class="block">
+                <div class="clothes">More information :</div>
+            </li>
+            <p id="buy">Check out our new font generator and level up your social bios. Need more? Head over to Glyphy for all the fancy fonts and cool symbols you could ever imagine.</p>
+            <button type="button" onclick="myFunction()">Buy</button>
+        </div>
+        <p id="question"></p>
+
+    </ul>
+
+</ul>
+
+<script  src="shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    list-style-type: none;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    padding: 20px;
+
+}
+
+.block{
+    padding: 10px;
+}
+
+.clothes{
+    color: black;
+    font-size: 30px;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+}
+
+.menu a :hover{
+    color: darkslategray;
+    text-decoration:underline;
+
+}
+
