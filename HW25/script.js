@@ -1,12 +1,17 @@
-document.addEventListener("click", focusFunction);
-document.addEventListener("click", blurFunction);
+const text = document.querySelector('input');
 
-function focusFunction() {
-    document.getElementById("focus").innerHTML = "Hello,Ivan!";
-}
+text.addEventListener('focus', (event) => {
+        document.getElementById("words").innerHTML = "Hello,Ivan";
+});
 
-function blurFunction() {
-    document.getElementById("focus").innerHTML = "";
-}
+
+text.addEventListener('blur', (event) => {
+    document.getElementById("words").innerHTML = "";
+});
+
+
+
+
+
 
 
