@@ -1,36 +1,44 @@
-.box{
+.main{
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
 }
 
-.container{
-    list-style-type: none;
-    text-decoration: none;
-    border-style: solid;
-    border-color: black;
+.categoryContainer{
+    padding: 10px;
+    align-items: center;
+    background-color: gray;
+
+}
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.btn{
+    border: none;
     padding: 20px;
+    background-color: gray;
 
 }
 
-.block{
+.itemsContainer{
+    align-items: center;
+
+
+}
+
+.itemElement{
+    background-color: gray;
+
+}
+
+.item{
     padding: 10px;
 }
 
-.clothes{
-    color: black;
-    font-size: 30px;
-
+.infoContainer{
+    background-color: gray;
 }
-
-.menu a{
-    text-decoration: none;
-    color: gray;
-    font-size: 20px;
-}
-
-.menu a :hover{
-    color: darkslategray;
-    text-decoration:underline;
-
-}
-
