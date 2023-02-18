@@ -46,7 +46,7 @@ for(let i=0; i < categories.length; i++ ) {
     const buttonElement = document.createElement('button')
     buttonElement.innerHTML = categories[i]
     buttonElement.id = categories[i]
-    buttonElement.classList.add("btn")
+        buttonElement.classList.add("btn")
 
     buttonElement.addEventListener("click",function(){
         itemsListElement.innerHTML=''
