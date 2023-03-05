@@ -31,7 +31,7 @@ const button = document.getElementsByTagName('form')[0]
 
 function getCommets(){
     const comments = document.getElementsByTagName('input')[0]
-    return `https://jsonplaceholder.typicode.com/posts/1/comments/${comments.value}`
+    return `https://jsonplaceholder.typicode.com/posts/{post_id}/comments/${comments.value}`
 
 }
 
