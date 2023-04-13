@@ -1,54 +1,46 @@
-function getWrapper(){
-    const endpoint='https://pokeapi.co/api/v2/pokemon'
-    const valueWrapper = document.getElementsByTagName('div')[0]
-    return endpoint;
-}
+const grid = document.querySelector('.grid');
+const modal = document.getElementById('modal');
+const modalContent = document.querySelector('.modal-content');
+const closeBtn = document.querySelector('.close');
+const pokemonImage = document.getElementById('pokemon-image');
+const pokemonWeight = document.getElementById('pokemon-weight');
+const pokemonHeight = document.getElementById('pokemon-height');
 
-function getPokemons() {
-    fetch(getWrapper() , { method: "GET" })
-        .then(res => res.json())
-        .then(res => showPokemons(res))
-}
+// Fetch data from API
+fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+    .then(response => response.json())
+    .then(data => {
+        const pokemonList = data.results;
+        pokemonList.forEach(pokemon => {
+            const pokemonDiv = document.createElement('div');
+            pokemonDiv.classList.add('pokemon');
+            pokemonDiv.innerHTML = `
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png">
+        <p>${pokemon.name}</p>
+      `;
+            grid.appendChild(pokemonDiv);
 
-getPokemons()
+            pokemonDiv.addEventListener('click', () => {
+                fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        pokemonImage.src = data.sprites.front_default;
+                        pokemonWeight.textContent = `Weight: ${data.weight}`;
+                        pokemonHeight.textContent = `Height: ${data.height}`;
+                        modal.style.display = 'block';
+                    });
+            });
+        });
+    });
 
-function showPokemons(respons){
-    const pokemons = respons.results;
-    for (let i=0; i< pokemons.length ; i++ ){
-        const pokemon = document.createElement('div');
-        const pokemonName = document.createElement('p');
-              pokemonName.textContent = pokemons[i].name
+// Close modal when user clicks the close button
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
 
-        pokemon.appendChild(pokemonName)
-
-        console.log(pokemon.innerText)
-
+// Close modal when user clicks anywhere outside the modal
+window.addEventListener('click', event => {
+    if (event.target == modal) {
+        modal.style.display = 'none';
     }
-}
-
-
-// // Получить модальный
-// var modal = document.getElementById("myModal");
-//
-// // Получить кнопку, которая открывает модальный
-// var btn = document.getElementById("myBtn");
-//
-// // Получить элемент <span>, который закрывает модальный
-// var span = document.getElementsByClassName("close")[0];
-//
-// // Когда пользователь нажимает на кнопку, откройте модальный
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// }
-//
-// // Когда пользователь нажимает на <span> (x), закройте модальное окно
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }
-//
-// // Когда пользователь щелкает в любом месте за пределами модального, закройте его
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
+});
